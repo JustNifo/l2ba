@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lineage 2 | Bald Arrow</title>
-	<link rel="icon" href="favicon.ico">
+    <title>Features | Bald Arrow</title>
+    <link rel="icon" href="favicon.ico">
     <style>
         /* Base Reset */
         * {
@@ -16,79 +16,104 @@
 
         body, html {
             height: 100%;
-            overflow: hidden; /* Keeps it a clean single-page landing */
+            background: #000;
         }
 
         /* Background Image Setup */
         .bg-image {
             background: 
-                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
-                url('https://i.postimg.cc/mZmHC2wM/Chat-GPT-Image-8-Apr-2026-09-55-28-m-m.png'); /* Placeholder for a realistic L2 render */
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+                url('4.png');
             background-size: cover;
             background-position: center;
-            height: 130vh;
+            background-attachment: fixed;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
+            padding: 40px 20px;
         }
 
-        /* Minimal Header */
-        h1 {
-            color: #f0e6d2;
-            font-size: 3rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
-            font-weight: 300;
-        }
-
-        /* Button Container */
-        .nav-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        /* Transparent Features Box */
+        .features-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 800px;
             width: 100%;
-            max-width: 300px;
+            margin-bottom: 50px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
-        /* Smooth Minimal Buttons */
-        .btn {
-            padding: 15px 25px;
-            font-size: 1rem;
+        h1 {
+            color: #d4af37;
+            font-size: 2rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            font-weight: 300;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .features-list {
+            text-align: left;
+            color: #f0e6d2;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            list-style: none;
+        }
+
+        .features-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .features-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+        }
+
+        .section-title {
+            color: #d4af37;
+            display: block;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+            letter-spacing: 1px;
+        }
+
+        /* Home Button at Bottom */
+        .btn-home {
+            padding: 12px 40px;
+            font-size: 0.9rem;
             color: #ffffff;
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            background: rgba(255, 255, 255, 0.05); /* Very transparent */
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px); /* Frosted glass effect */
+            letter-spacing: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
             transition: all 0.4s ease;
             border-radius: 4px;
+            margin-top: auto; /* Pushes to bottom of flex container if needed */
         }
 
-        .btn:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(212, 175, 55, 0.6); /* Subtle Gold highlight */
+        .btn-home:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
             color: #d4af37;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transform: translateY(-2px);
         }
 
-        /* Discord specific highlight */
-        .btn-discord:hover {
-            border-color: #5865F2;
-            color: #5865F2;
-        }
-
-        /* Footer/Subtext */
         .footer-text {
-            position: absolute;
-            bottom: 30px;
-            color: rgba(255,255,255,0.4);
-            font-size: 0.8rem;
+            margin-top: 30px;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.75rem;
             letter-spacing: 1px;
         }
     </style>
@@ -96,14 +121,41 @@
 <body>
 
     <div class="bg-image">
-
-
-        <div class="nav-container">
-            <a href="#" class="btn">Server Features</a>
-            <a href="#" class="btn">Server Files</a>
-            <a href="#" class="btn btn-discord">Discord</a>
-            <a href="#" class="btn">L2 Hub</a>
+        
+        <div class="features-container">
+            <h1>☆ BASIC FEATURES ☆</h1>
+            <ul class="features-list">
+                <li><strong>XP/SP:</strong> x3</li>
+                <li><strong>DROP:</strong> x1</li>
+                <li><strong>SPOIL:</strong> x1</li>
+                <li><strong>ADENA:</strong> x3</li>
+                <li><strong>SEAL STONES:</strong> x3</li>
+                <li><strong>MAX CLIENT:</strong> 1+1</li>
+                <li><strong>MAX LEVEL:</strong> 78 [Stage 3]</li>
+                <li><strong>MAX ENCHANT:</strong> [Safe +3] (Weapon 16 / Armor 12 / Jewelry 12)</li>
+                <li style="list-style: none; padding-left: 0; color: #aaa; font-size: 0.85rem;">
+                    Normal Weapon = 70  ●  Blessed Weapon = 80<br>
+                    Normal Armor = 64  ●  Blessed Armor = 80<br>
+                    Normal Jewelry = 64  ● Blessed Jewelry = 80
+                </li>
+                
+                <span class="section-title">GAMEPLAY MODIFICATIONS</span>
+                <li>AUTO NOBLESSE FOR ALL</li>
+                <li>SUBCLASS FREE (NO QUEST)</li>
+                <li>AUTOLOOT (No Raids)</li>
+                <li>24 BUFF SLOTS</li>
+                <li>NPC BUFFER (BUFFS/DANCE/SONGS/POF/POW/COV) - 1 HOUR DURATION</li>
+                <li>AIO NPC GM SHOP (POTIONS/QUEST ITEMS/AA EXCHANGER/DONATE/MISC)</li>
+                <li>CLASS MANAGER [DONATE]</li>
+                <li>OFFLINE STORE/CRAFT</li>
+                
+                <span class="section-title">CURRENCIES</span>
+                <li>Adena, Ancient Adena, Donation Coin</li>
+                <li>Special Items/Coins (For S Armor Upgrade, Craft S Armor/Weapon, Enchants)</li>
+            </ul>
         </div>
+
+        <a href="index.html" class="btn-home">Home</a>
 
         <p class="footer-text">EST. 2026 • CHRONICLE C4: SCIONS OF DESTINY</p>
     </div>
