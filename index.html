@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lineage 2 | Bald Arrow</title>
-	<link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico">
     <style>
         /* Base Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            /* Using a Serif font for that classic medieval/L2 feel */
+            font-family: 'Times New Roman', Times, serif;
         }
 
         body, html {
             height: 100%;
-            overflow: hidden; /* Keeps it a clean single-page landing */
+            overflow: hidden;
+            background-color: #000;
         }
 
         /* Background Image Setup */
         .bg-image {
             background: 
                 linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
-                url('4.png'); /* Placeholder for a realistic L2 render */
+                url('4.png');
             background-size: cover;
             background-position: center;
-            height: 130vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -34,75 +36,84 @@
             text-align: center;
         }
 
-        /* Minimal Header */
-        h1 {
-            color: #f0e6d2;
-            font-size: 3rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
-            font-weight: 300;
-        }
-
         /* Button Container */
         .nav-container {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 18px;
             width: 100%;
-            max-width: 300px;
+            max-width: 320px;
         }
 
-        /* Smooth Minimal Buttons */
+        /* Lineage 2 UI Styled Button */
         .btn {
-            padding: 15px 25px;
-            font-size: 1rem;
-            color: #ffffff;
+            position: relative;
+            padding: 14px 25px;
+            font-size: 1.05rem;
+            color: #e0d1b1; /* Off-white parchment color */
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            background: rgba(255, 255, 255, 0.05); /* Very transparent */
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px); /* Frosted glass effect */
-            transition: all 0.4s ease;
-            border-radius: 4px;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+            
+            /* Gradient background to simulate metal/stone button */
+            background: linear-gradient(180deg, #2c2c2c 0%, #1a1a1a 100%);
+            
+            /* Double Border Logic */
+            border: 2px solid #5a4a32; /* Bronze outer border */
+            outline: 1px solid #000; /* Sharp separation */
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.8), 0 5px 15px rgba(0,0,0,0.5);
+            
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+
+        /* The Inner Gold Line Border */
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            border: 1px solid #3d3428; 
+            pointer-events: none;
         }
 
         .btn:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(212, 175, 55, 0.6); /* Subtle Gold highlight */
-            color: #d4af37;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            color: #ffffff;
+            background: linear-gradient(180deg, #3d3428 0%, #251f18 100%);
+            border-color: #d4af37; /* Bright gold highlight */
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+            transform: translateY(-2px);
         }
 
-        /* Discord specific highlight */
+        /* Special highlight for active/Discord if needed */
         .btn-discord:hover {
             border-color: #5865F2;
-            color: #5865F2;
+            text-shadow: 0 0 10px #5865F2;
         }
 
         /* Footer/Subtext */
         .footer-text {
             position: absolute;
             bottom: 30px;
-            color: rgba(255,255,255,0.4);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
+            color: #5a4a32; /* Bronze color */
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px #000;
         }
     </style>
 </head>
 <body>
 
     <div class="bg-image">
-
-
         <div class="nav-container">
             <a href="features.html" class="btn">Server Features</a>
-			<a href="#" class="btn">Lineage II C4 Client</a>
+            <a href="#" class="btn">Lineage II C4 Client</a>
             <a href="#" class="btn">Lineage II Bald Arrow Patch</a>
-            <a href="https://discord.gg/kwBD8d67gn" class="btn">Discord</a>
+            <a href="https://discord.gg/kwBD8d67gn" class="btn btn-discord">Discord</a>
             <a href="https://l2hub.info/c4/" class="btn">L2 Hub</a>
         </div>
 
