@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Times New Roman', Times, serif;
         }
 
         body, html {
@@ -22,99 +22,140 @@
         /* Background Image Setup */
         .bg-image {
             background: 
-                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
                 url('4.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            min-height: 100vh;
+            min-height: 130vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
         /* Transparent Features Box */
         .features-container {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(20, 20, 20, 0.6);
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+            border: 2px solid #5a4a32; /* Bronze border */
+            border-radius: 4px;
             padding: 40px;
-            max-width: 800px;
+            max-width: 850px;
             width: 100%;
-            margin-bottom: 50px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.9), 0 20px 50px rgba(0,0,0,0.8);
+            position: relative;
+        }
+
+        /* Decorative inner corner lines */
+        .features-container::before {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 1px solid rgba(90, 74, 50, 0.3);
+            pointer-events: none;
         }
 
         h1 {
             color: #d4af37;
-            font-size: 2rem;
+            font-size: 2.2rem;
             letter-spacing: 4px;
             text-transform: uppercase;
+            text-align: center;
             margin-bottom: 30px;
-            font-weight: 300;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            padding-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
 
         .features-list {
-            text-align: left;
             color: #f0e6d2;
-            line-height: 1.8;
-            font-size: 0.95rem;
+            line-height: 1.6;
+            font-size: 1rem;
             list-style: none;
-        }
-
-        .features-list li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .features-list li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #d4af37;
         }
 
         .section-title {
             color: #d4af37;
-            display: block;
+            display: flex;
+            align-items: center;
             font-weight: bold;
-            margin: 20px 0 10px 0;
-            letter-spacing: 1px;
+            margin: 30px 0 15px 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 1.1rem;
         }
 
-        /* Home Button at Bottom */
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, #5a4a32, transparent);
+            margin-left: 15px;
+        }
+
+        .features-list li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 5px;
+        }
+
+        .features-list li::before {
+            content: '›';
+            position: absolute;
+            left: 5px;
+            color: #d4af37;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .highlight-gold {
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        /* L2 Styled Home Button */
         .btn-home {
-            padding: 12px 40px;
-            font-size: 0.9rem;
-            color: #ffffff;
+            position: relative;
+            padding: 12px 60px;
+            font-size: 1.1rem;
+            color: #e0d1b1;
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-            transition: all 0.4s ease;
-            border-radius: 4px;
-            margin-top: auto; /* Pushes to bottom of flex container if needed */
+            letter-spacing: 2px;
+            font-weight: bold;
+            background: linear-gradient(180deg, #2c2c2c 0%, #1a1a1a 100%);
+            border: 2px solid #5a4a32;
+            outline: 1px solid #000;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.8), 0 5px 15px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .btn-home::after {
+            content: '';
+            position: absolute;
+            top: 2px; left: 2px; right: 2px; bottom: 2px;
+            border: 1px solid #3d3428;
+            pointer-events: none;
         }
 
         .btn-home:hover {
-            background: rgba(212, 175, 55, 0.2);
+            color: #ffffff;
             border-color: #d4af37;
-            color: #d4af37;
+            background: linear-gradient(180deg, #3d3428 0%, #251f18 100%);
             transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         }
 
         .footer-text {
-            margin-top: 30px;
-            color: rgba(255,255,255,0.3);
-            font-size: 0.75rem;
-            letter-spacing: 1px;
+            margin-top: 40px;
+            color: #5a4a32;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -123,35 +164,35 @@
     <div class="bg-image">
         
         <div class="features-container">
-            <h1>☆ BASIC FEATURES ☆</h1>
+            <h1>☆ SERVER FEATURES ☆</h1>
+            
             <ul class="features-list">
-                <li><strong>XP/SP:</strong> x3</li>
-                <li><strong>DROP:</strong> x1</li>
-                <li><strong>SPOIL:</strong> x1</li>
-                <li><strong>ADENA:</strong> x3</li>
-                <li><strong>SEAL STONES:</strong> x3</li>
-                <li><strong>MAX CLIENT:</strong> 1+1</li>
-                <li><strong>MAX LEVEL:</strong> 78 [Stage 3]</li>
-                <li><strong>MAX ENCHANT:</strong> [Safe +3] (Weapon 16 / Armor 12 / Jewelry 12)</li>
-                <li style="list-style: none; padding-left: 0; color: #aaa; font-size: 0.85rem;">
-                     Normal Weapon = 70  ●  Blessed Weapon = 80<br>
-                     Normal Armor = 64  ●  Blessed Armor = 80<br>
-                     Normal Jewelry = 64  ● Blessed Jewelry = 80
+                <span class="section-title">Rates & Limits</span>
+                <li>XP/SP: <span class="highlight-gold">x3</span></li>
+                <li>DROP / ADENA / SEAL STONES: <span class="highlight-gold">x1 / x3 / x3</span></li>
+                <li>SPOIL: <span class="highlight-gold">x1</span></li>
+                <li>MAX CLIENT: <span class="highlight-gold">1+1</span></li>
+                <li>MAX LEVEL: <span class="highlight-gold">78 [Stage 3]</span></li>
+                <li>MAX ENCHANT: <span class="highlight-gold">[Safe +3]</span> (Weapon 16 / Armor 12 / Jewelry 12)</li>
+                <li style="list-style: none; padding-left: 25px; color: #888; font-size: 0.85rem; border: none;">
+                    Normal Weapon: 70% | Blessed: 80%<br>
+                    Normal Armor: 64% | Blessed: 80%<br>
+                    Normal Jewelry: 64% | Blessed: 80%
                 </li>
                 
-                <span class="section-title">GAMEPLAY MODIFICATIONS</span>
-                <li>AUTO NOBLESSE FOR ALL</li>
-                <li>SUBCLASS FREE (NO QUEST)</li>
-                <li>AUTOLOOT (No Raids)</li>
+                <span class="section-title">Gameplay & Quality of Life</span>
+                <li><span class="highlight-gold">AUTO NOBLESSE</span> FOR ALL</li>
+                <li><span class="highlight-gold">SUBCLASS FREE</span> (NO QUEST)</li>
+                <li>AUTOLOOT (Excluding Raid Bosses)</li>
                 <li>24 BUFF SLOTS</li>
-                <li>NPC BUFFER (BUFFS/DANCE/SONGS/POF/POW/COV) - 2 HOURS DURATION</li>
-                <li>AIO NPC GM SHOP (POTIONS/QUEST ITEMS/AA EXCHANGER/DONATE/MISC)</li>
-                <li>CLASS MANAGER [DONATE]</li>
-                <li>OFFLINE STORE/CRAFT</li>
+                <li>NPC BUFFER: <span class="highlight-gold">2 HOURS DURATION</span> (Includes Dances/Songs/Prophesies)</li>
+                <li>OFFLINE STORE & CRAFT SYSTEM</li>
                 
-                <span class="section-title">CURRENCIES</span>
-                <li>Adena, Ancient Adena, Donation Coin</li>
-                <li>Special Items/Coins (For S Armor Upgrade, Craft S Armor/Weapon, Enchants)</li>
+                <span class="section-title">NPCs & Economy</span>
+                <li>AIO NPC GM SHOP: Potions, Quest Items, AA Exchanger, Cosmetics</li>
+                <li>CLASS MANAGER: [Available via Donation]</li>
+                <li>CURRENCY: Adena, Ancient Adena, Donation Coins</li>
+                <li>SPECIAL COINS: Used for S-Grade Upgrades & Special Enchants</li>
             </ul>
         </div>
 
